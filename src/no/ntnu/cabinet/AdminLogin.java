@@ -35,12 +35,14 @@ public class AdminLogin extends HttpServlet {
 		String password = request.getParameter("formPassword");
 		if(!password.equals(adminPassword)) {
 			out.println("<b>Incorrect password.</b>");
-			out.println(password);
+			out.println("<a href=\"Login.html\"> Go back <\\a>");
+			return;
 		}
 		else {
 			out.println("Correct password.");
 			HttpSession session = request.getSession();
 			session.setAttribute("isAdmin", true);
+			response.sendRedirect("index.jsp");
 		}
 	}
 
