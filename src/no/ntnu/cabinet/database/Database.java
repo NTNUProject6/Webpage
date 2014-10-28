@@ -1,4 +1,5 @@
 package no.ntnu.cabinet.database;
+
 import java.sql.Date;
 import java.sql.DriverManager;
 import java.sql.PreparedStatement;
@@ -79,4 +80,25 @@ public class Database {
 		}
 		return ab;
 	}
+	
+	public void addReport(Report report) {
+		try{
+			statement = connection.createStatement();
+			String query = "INSERT INTO reports (cabin_id, wood, damage, missing, report_date) "
+					+ "VALUES (1, ?, ?, ?, ?)";
+			PreparedStatement pStatement = connection.prepareStatement(query); 
+			pStatement.setInt(1, report.getWood());
+			pStatement.setString(2, report.getDamage());
+			pStatement.setString(3, report.getMissing());
+			pStatement.setDate(4, new java.sql.Date(report.getReport_date().getTime()));
+			//pStatement.setInt(1, report.getBooking_id());
+
+			pStatement.execute();
+			
+			statement.close();
+		} catch (Exception e){
+			e.printStackTrace();
+		}
+	}
+	
 }

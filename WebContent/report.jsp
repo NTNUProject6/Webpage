@@ -3,6 +3,11 @@
 <!DOCTYPE html>
 <html>
 <head>
+<title> Reporting </title>
+<!--For including Norwegian text in the webpage-->
+<meta charset="UTF-8">
+</head>
+<body>
 <div id="nav">
 		<!--Home<br>-->
 		<a id="mybutton" href="index.jsp" title="Home">
@@ -30,56 +35,51 @@
 	<% } %>
 
 	</div>
-<title> 
-	Reporting
-</title>
-<!--For including Norwegian text in the webpage-->
-<meta charset="UTF-8">
-<form id="contact_form" action="#" method="POST" enctype="multipart/form-data">
+
+<form id="contact_form" action="RegisterReport" method="post">
 	<div class="row">
 		<label for="cabin">Cabin Name:</label>
-		<form>
-         <select name="Cabin Name">
-                <option value="1">FlÃ¥koia</option>
+         <select name="cabin_id">
+                <option value="1">Flåkoia</option>
                 <option value="2">Fosenkoia</option>
                 <option value="3" selected>Heinfjordstua</option>
                 <option value="4">Hognabu</option>
-				<option value="5">HolmsÃ¥koia</option>
+				<option value="5">Holmsåkoia</option>
                 <option value="6">Holvassgamma</option>
                 <option value="7">Iglbu</option>
-                <option value="8">KamtjÃ¸nnkoia</option>
-				<option value="9">KrÃ¥klikÃ¥ten</option>
+                <option value="8">Kamtjønnkoia</option>
+				<option value="9">Kråklikåten</option>
                 <option value="10">Kvernmovollen</option>
-                <option value="11">KÃ¥sen</option>
-				<option value="12">LynhÃ¸gen</option>
-                <option value="13">MortenskÃ¥ten</option>
+                <option value="11">Kåsen</option>
+				<option value="12">Lynhøgen</option>
+                <option value="13">Mortenskåten</option>
                 <option value="14">Nicokoia</option>
-				<option value="15">RindalslÃ¸a</option>
-				<option value="16">SelbukÃ¥ten</option>
+				<option value="15">Rindalsløa</option>
+				<option value="16">Selbukåten</option>
                 <option value="17">Sonvasskoia</option>
                 <option value="18">Stabburet</option>
 				<option value="19">Stakkslettbua</option>
                 <option value="20">Telin</option>
                 <option value="21">Taagaabu</option>
-				<option value="22">VekvessÃ¦tra</option>
-                <option value="23">Ãvensenget</option>
+				<option value="22">Vekvessætra</option>
+                <option value="23">Øvensenget</option>
 				
          </select>
-      </form>
+
 			</div>
 	<div class="row">
 		<label for="date">Date:</label>
 	
 <select name="day">
-	<option value="1">1
-	<option value="2">2
-	<option value="3">3
-	<option value="4">4
-	<option value="5">5
-	<option value="6">6
-	<option value="7">7
-	<option value="8">8
-	<option value="9">9
+	<option value="01">1
+	<option value="02">2
+	<option value="03">3
+	<option value="04">4
+	<option value="05">5
+	<option value="06">6
+	<option value="07">7
+	<option value="08">8
+	<option value="09">9
 	<option value="10">10
 	<option value="11">11
 	<option value="12">12
@@ -104,15 +104,15 @@
 	<option value="31">31
 </select>
 <select name="month">
-	 <option value="1">January
-	 <option value="2">February
-	 <option value="3">March
-	 <option value="4">April
-	 <option value="5">May
-	<option value="6">June
-	<option value="7">July
-	<option value="8">August
-	<option value="9">September
+	 <option value="01">January
+	 <option value="02">February
+	 <option value="03">March
+	 <option value="04">April
+	 <option value="05">May
+	<option value="06">June
+	<option value="07">July
+	<option value="08">August
+	<option value="09">September
 	<option value="10">October
 	<option value="11">November
 	<option value="12">December
@@ -164,9 +164,6 @@
 	</div>
 	<input id="submit_button" type="submit" value="submit" />
 </form>			
-</head>
-
-<body>
 
 </body>
 </html>
