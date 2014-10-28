@@ -28,23 +28,32 @@ public class Database {
 		}
 	}
 	
+	public void close() {
+		if(connection != null) {
+			try {
+				connection.close();
+			} catch (Exception e) {
+				e.printStackTrace();
+			}
+		}
+	}
+	
 	public void addBooking(Booking booking){
 		try{
 			statement = connection.createStatement();
-			String query = "INSERT INTO cabins (user_id, cabin_id, date_from, date_to) "
+			String query = "INSERT INTO bookings (user_id, cabin_id, date_from, date_to) "
 					+ "VALUES (?, ?, ?, ?)";
 			PreparedStatement pStatement = connection.prepareStatement(query); 
 			pStatement.setString(1, booking.getUser_id());
 			pStatement.setInt(2, booking.getCabin_id());
-			pStatement.setDate(3, booking.getDate_From());
-			pStatement.setDate(4, booking.getDate_To());
+			pStatement.setDate(3, new java.sql.Date(booking.getDate_From().getTime()));
+			pStatement.setDate(4, new java.sql.Date(booking.getDate_To().getTime()));
 			
 			pStatement.execute();
 			
 			statement.close();
 		} catch (Exception e){
-			System.err.println("Got an exception!");
-		    System.err.println(e.getMessage());
+			e.printStackTrace();
 		}
 	}
 	
@@ -69,27 +78,5 @@ public class Database {
 			se.printStackTrace();
 		}
 		return ab;
-	}
-	
-	public static void main(String[] args){
-		Database db = new Database();
-		Booking booking1 = new Booking();
-		booking1.setUser_id("Hello mtfk");
-		booking1.setCabin_id(1);
-		booking1.setDate_From(new Date(2014,11,1));
-		booking1.setDate_To(new Date(2014,11,7));
-		db.addBooking(booking1);
-		
-		ArrayList<Booking> ab = new ArrayList<Booking>();
-		ab = db.getBooking(1);
-		for(Booking b : ab){
-			System.out.println("////////////////////////////////");
-			System.out.println("booking_id:	" + b.getId());
-			System.out.println("user_id:	" + b.getUser_id());
-			System.out.println("cabin_id:	" + b.getCabin_id());
-			System.out.println("date_from:	" + b.getDate_From());
-			System.out.println("date_to:	" + b.getDate_To());
-		}
-
 	}
 }

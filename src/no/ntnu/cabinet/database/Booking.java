@@ -1,6 +1,6 @@
 package no.ntnu.cabinet.database;
 
-import java.sql.Date;
+import java.util.Date;
 
 public class Booking {
 	private int id;
