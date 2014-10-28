@@ -13,22 +13,29 @@
 <body>
 	<div id="nav">
 		<!--Home<br>-->
-		<a id="mybutton" href="index.html" title="Home">
+		<a id="mybutton" href="index.jsp" title="Home">
 		  <button>Home</button>
 		 </a>
 		<!-- <a href="Homepage.html" target="_blank">Home</a>-->
 		<!--Register<br>-->
-		<a id="mybutton" href="Registration.html" title="Registration">
+		<a id="mybutton" href="Registration.jsp" title="Registration">
 		  <button>Register</button>
 		 </a>
 		<!--Contact<br>-->
-		<a id="mybutton" href="report.html" title="Report">
+		<a id="mybutton" href="report.jsp" title="Report">
 		  <button>Report</button>
 		 </a>
 		<!--Login<br>-->
-		<a id="mybutton" href="Login.html" title="Admin Login">
+		<a id="mybutton" href="Login.jsp" title="Admin Login">
 		  <button>Login</button>
 		 </a>
+		 
+	<% if(session.getAttribute("isAdmin") != null &&
+		(Boolean)session.getAttribute("isAdmin") == true) { %>
+		<a id="mybutton" href="AdminLogout" title="Admin Logout">
+		  <button>Logout</button>
+		 </a>
+	<% } %>
 
 	</div>
 
