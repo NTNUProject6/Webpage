@@ -102,4 +102,26 @@ public class Database {
 		}
 	}
 	
+	public ArrayList<Report> getReports(int cabin_id){
+		ArrayList<Report> rp = new ArrayList<Report>();
+		try{
+			statement = connection.createStatement();
+			String sql = "select * from reports where cabin_id = " + cabin_id + " order by report_date desc";
+			ResultSet rs = statement.executeQuery(sql);
+			while(rs.next()){
+				Report r = new Report();
+				r.setWood(rs.getInt("wood"));
+				r.setDamage(rs.getString("damage"));
+				r.setMissing(rs.getString("missing"));
+				r.setReport_date(rs.getDate("report_date"));
+				r.setEmail(rs.getString("email"));
+				rp.add(r);
+			}
+			rs.close();
+			statement.close();
+		} catch(SQLException se){
+			se.printStackTrace();
+		}
+		return rp;
+	}
 }
