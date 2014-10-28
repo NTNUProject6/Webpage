@@ -58,8 +58,7 @@
 		  <button>Login</button>
 		 </a>
 		 
-	<% if(session.getAttribute("isAdmin") != null &&
-	(Boolean)session.getAttribute("isAdmin") == true) { %>
+	<% if(CabinetUtils.IsAdmin(session)) { %>
 		<a id="mybutton" href="AdminLogout" title="Admin Logout">
 		  <button>Logout</button>
 		 </a>

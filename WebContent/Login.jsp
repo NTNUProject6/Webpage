@@ -1,5 +1,5 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8"%>
+    pageEncoding="UTF-8", import="no.ntnu.cabinet.CabinetUtils"%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -32,8 +32,7 @@
 		  <button>Login</button>
 		 </a>
 		 
-	<% if(session.getAttribute("isAdmin") != null &&
-		(Boolean)session.getAttribute("isAdmin") == true) { %>
+	<% if(CabinetUtils.IsAdmin(session)) { %>
 		<a id="mybutton" href="AdminLogout" title="Admin Logout">
 		  <button>Logout</button>
 		 </a>

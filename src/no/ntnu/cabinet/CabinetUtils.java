@@ -2,6 +2,9 @@ package no.ntnu.cabinet;
 
 import java.util.Date;
 import java.util.ArrayList;
+
+import javax.servlet.http.HttpSession;
+
 import no.ntnu.cabinet.database.Database;
 import no.ntnu.cabinet.database.Booking;
 
@@ -17,5 +20,10 @@ public class CabinetUtils {
 				return true;
 		}
 		return false;
+	}
+	
+	public static boolean IsAdmin(HttpSession session) {
+		return (session.getAttribute("isAdmin") != null &&
+				(Boolean)session.getAttribute("isAdmin") == true);
 	}
 }
