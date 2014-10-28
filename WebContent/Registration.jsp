@@ -45,15 +45,15 @@
 	
 <form action="container.jsp" method="get">
 <select name="from_day">
-	<option value="1">1
+	<option value="01">1
 	<option value="2">2
-	<option value="3">3
-	<option value="4">4
-	<option value="5">5
-	<option value="6">6
-	<option value="7">7
-	<option value="8">8
-	<option value="9">9
+	<option value="03">3
+	<option value="04">4
+	<option value="05">5
+	<option value="06">6
+	<option value="07">7
+	<option value="08">8
+	<option value="09">9
 	<option value="10">10
 	<option value="11">11
 	<option value="12">12
@@ -78,15 +78,15 @@
 	<option value="31">31
 </select>
 <select name="from_month">
-	 <option value="1">January
-	 <option value="2">February
-	 <option value="3">March
-	 <option value="4">April
-	 <option value="5">May
-	<option value="6">June
-	<option value="7">July
-	<option value="8">August
-	<option value="9">September
+	 <option value="01">January
+	 <option value="02">February
+	 <option value="03">March
+	 <option value="04">April
+	 <option value="05">May
+	<option value="06">June
+	<option value="07">July
+	<option value="08">August
+	<option value="09">September
 	<option value="10">October
 	<option value="11">November
 	<option value="12">December
@@ -99,15 +99,15 @@
 </div><label>EndDate:</label>
 	
 <select name="to_day">
-	<option value="1">1
-	<option value="2">2
-	<option value="3">3
-	<option value="4">4
-	<option value="5">5
-	<option value="6">6
-	<option value="7">7
-	<option value="8">8
-	<option value="9">9
+	<option value="01">1
+	<option value="02">2
+	<option value="03">3
+	<option value="04">4
+	<option value="05">5
+	<option value="06">6
+	<option value="07">7
+	<option value="08">8
+	<option value="09">9
 	<option value="10">10
 	<option value="11">11
 	<option value="12">12
@@ -132,15 +132,15 @@
 	<option value="31">31
 </select>
 <select name="to_month">
-	 <option value="1">January
-	 <option value="2">February
-	 <option value="3">March
-	 <option value="4">April
-	 <option value="5">May
-	<option value="6">June
-	<option value="7">July
-	<option value="8">August
-	<option value="9">September
+	 <option value="01">January
+	 <option value="02">February
+	 <option value="03">March
+	 <option value="04">April
+	 <option value="05">May
+	<option value="06">June
+	<option value="07">July
+	<option value="08">August
+	<option value="09">September
 	<option value="10">October
 	<option value="11">November
 	<option value="12">December
