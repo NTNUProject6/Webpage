@@ -43,7 +43,7 @@
 		<div class="row">
 		<label for="date">StartDate:</label>
 	
-<form action="container.jsp" method="get">
+<form action="container.jsp" method="post">
 <select name="from_day">
 	<option value="01">1
 	<option value="2">2

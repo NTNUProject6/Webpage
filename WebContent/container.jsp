@@ -68,7 +68,7 @@
  <div id="container">
  
   </div>
- <form action="RegisterBooking" method="get">
+ <form action="RegisterBooking" method="post">
  <input type="hidden" name="from_date" value="<%= from_date_string %>">
  <input type="hidden" name="to_date" value="<%= to_date_string %>">
   <div class="mailsubmit"><sup>Email</sup><input type="email" name="email" placeholder="me@example.com">*
