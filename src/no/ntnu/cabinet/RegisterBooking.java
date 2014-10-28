@@ -35,6 +35,13 @@ public class RegisterBooking extends HttpServlet {
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+
+	}
+
+	/**
+	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
+	 */
+	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 	 	SimpleDateFormat sdf = new SimpleDateFormat("dd-M-yyyy");
 	 	Date from_date;
 	 	Date to_date;
@@ -60,13 +67,6 @@ public class RegisterBooking extends HttpServlet {
 		
 		// TODO: Redirect to a page depending on whether the booking succeeded or failed
 		response.sendRedirect("index.jsp");
-	}
-
-	/**
-	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
-	 */
-	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		// TODO Auto-generated method stub
 	}
 
 }
