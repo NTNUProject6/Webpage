@@ -1,3 +1,5 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -38,29 +40,29 @@
 		<label for="cabin">Cabin Name:</label>
 		<form>
          <select name="Cabin Name">
-                <option value="1">Flåkoia</option>
+                <option value="1">FlÃ¥koia</option>
                 <option value="2">Fosenkoia</option>
                 <option value="3" selected>Heinfjordstua</option>
                 <option value="4">Hognabu</option>
-				<option value="5">Holmsåkoia</option>
+				<option value="5">HolmsÃ¥koia</option>
                 <option value="6">Holvassgamma</option>
                 <option value="7">Iglbu</option>
-                <option value="8">Kamtjønnkoia</option>
-				<option value="9">Kråklikåten</option>
+                <option value="8">KamtjÃ¸nnkoia</option>
+				<option value="9">KrÃ¥klikÃ¥ten</option>
                 <option value="10">Kvernmovollen</option>
-                <option value="11">Kåsen</option>
-				<option value="12">Lynhøgen</option>
-                <option value="13">Mortenskåten</option>
+                <option value="11">KÃ¥sen</option>
+				<option value="12">LynhÃ¸gen</option>
+                <option value="13">MortenskÃ¥ten</option>
                 <option value="14">Nicokoia</option>
-				<option value="15">Rindalsløa</option>
-				<option value="16">Selbukåten</option>
+				<option value="15">RindalslÃ¸a</option>
+				<option value="16">SelbukÃ¥ten</option>
                 <option value="17">Sonvasskoia</option>
                 <option value="18">Stabburet</option>
 				<option value="19">Stakkslettbua</option>
                 <option value="20">Telin</option>
                 <option value="21">Taagaabu</option>
-				<option value="22">Vekvessætra</option>
-                <option value="23">Øvensenget</option>
+				<option value="22">VekvessÃ¦tra</option>
+                <option value="23">Ãvensenget</option>
 				
          </select>
       </form>

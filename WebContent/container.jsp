@@ -1,3 +1,5 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
 <!--For including Norwegian text in the webpage-->
@@ -6,6 +8,13 @@
  <link rel="stylesheet" type="text/css" href="container.css">
  <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
  <script src="container.js"></script>
+
+ 
+ <% 
+ 
+ request.getParameter("from_day");
+ 
+ %>
 
  <title>&lt;input type=&quot;email&quot;&gt;</title>
 </head>
@@ -44,7 +53,7 @@
  <div class="mailsubmit"><sup>Email</sup><input type="email" placeholder="me@example.com">*
  <button  onclick="myFunction()">Submit</button></div>	
          <fieldset>
-			<div class="container collapsed"><div class="header"><input type ="radio" name ="cabins" value ="1"> <img src="Images/flaakoia1.png"/ >Flåkoia</div> </br> 
+			<div class="container collapsed"><div class="header"><input type ="radio" name ="cabins" value ="1"> <img src="Images/flaakoia1.png"/ >FlÃ¥koia</div> </br> 
 			<div class="content">
 				<div><a href="Images/flaakoia1.png"><img src="Images/flaakoia1.png"></a></div>
 				<div><ul id="info"><li><a href="Images/flaakoia2.png"><img src="Images/flaakoia2.png"></a></li>
@@ -85,7 +94,7 @@
 							   <li>Difficulty:2 </li></ul></div>
 			</div></div>
             
-			<div class="container collapsed"><div class="header"><input type ="radio" name ="cabins" value ="5"> <img src="Images/holmsaakoia1.jpg"/ >Holmsåkoia</div> </br> 
+			<div class="container collapsed"><div class="header"><input type ="radio" name ="cabins" value ="5"> <img src="Images/holmsaakoia1.jpg"/ >HolmsÃ¥koia</div> </br> 
 			<div class="content">
 				<div><a href="Images/holmsaakoia1.jpg"><img src="Images/holmsaakoia1.jpg"></a></div>
 				<div><ul id="info"><li><a href="Images/holmsaakoia2.jpg"><img src="Images/holmsaakoia2.jpg"></a></li>
@@ -115,7 +124,7 @@
 							   <li>Location:Forest</li>
 							   <li>Difficulty:2 </li></ul></div>
 			</div></div>
-            <div class="container collapsed"><div class="header"><input type ="radio" name ="cabins" value ="8"> <img src="Images/kamtjonnkoia1.jpg" />Kamtjønnkoia </div></br>
+            <div class="container collapsed"><div class="header"><input type ="radio" name ="cabins" value ="8"> <img src="Images/kamtjonnkoia1.jpg" />KamtjÃ¸nnkoia </div></br>
 			<div class="content">
 				<div><a href="Images/kamtjonnkoia1.jpg"><img src="Images/kamtjonnkoia1.jpg"></a></div>
 				<div><ul id="info"><li><a href="Images/kamtjonnkoia2.jpg"><img src="Images/kamtjonnkoia2.jpg"></a></li>
@@ -125,7 +134,7 @@
 							   <li>Location:Forest</li>
 							   <li>Difficulty:2 </li></ul></div>
 			</div></div>
-            <div class="container collapsed"><div class="header"><input type ="radio" name ="cabins" value ="9"> <img src="Images/kraaklikaaten1.jpg" />Kråklikåten </div></br>
+            <div class="container collapsed"><div class="header"><input type ="radio" name ="cabins" value ="9"> <img src="Images/kraaklikaaten1.jpg" />KrÃ¥klikÃ¥ten </div></br>
 			<div class="content">
 				<div><a href="Images/kraaklikaaten1.jpg"><img src="Images/Kraaklikaaten1.jpg"></a></div>
 				<div><ul id="info"><li><a href="Images/kraaklikaaten2.jpg"><img src="Images/kraaklikaaten2.jpg"></a></li>
@@ -145,7 +154,7 @@
 							   <li>Location:Forest</li>
 							   <li>Difficulty:2 </li></ul></div>
 			</div></div>
-            <div class="container collapsed"><div class="header"><input type ="radio" name ="cabins" value ="11"> <img src="Images/kaasen1.jpg" />Kåsen </div></br>
+            <div class="container collapsed"><div class="header"><input type ="radio" name ="cabins" value ="11"> <img src="Images/kaasen1.jpg" />KÃ¥sen </div></br>
 			<div class="content">
 				<div><a href="Images/kaasen1.jpg"><img src="Imageskaasen1.jpg"></a></div>
 				<div><ul id="info"><li><a href="Images/kaasen2.jpg"><img src="Images/kaasen2.jpg"></a></li>
@@ -155,7 +164,7 @@
 							   <li>Location:Forest</li>
 							   <li>Difficulty:2 </li></ul></div>
 			</div></div>
-			<div class="container collapsed"><div class="header"><input type ="radio" name ="cabins" value ="12"> <img src="Images/Kvernmovollen1.jpg" />Lynhøgen </div></br>
+			<div class="container collapsed"><div class="header"><input type ="radio" name ="cabins" value ="12"> <img src="Images/Kvernmovollen1.jpg" />LynhÃ¸gen </div></br>
 			<div class="content">
 				<div><a href="Images/lynhogen1.jpg"><img src="Images/lynhogen1.jpg"></a></div>
 				<div><ul id="info"><li><a href="Images/lynhogen2.jpg"><img src="Images/lynhogen2.jpg"></a></li>
@@ -165,7 +174,7 @@
 							   <li>Location:Forest</li>
 							   <li>Difficulty:2 </li></ul></div>
 			</div></div>
-			<div class="container collapsed"><div class="header"><input type ="radio" name ="cabins" value ="13"> <img src="Images/mortenskaaten1.jpg" />Mortenskåten</div> </br>
+			<div class="container collapsed"><div class="header"><input type ="radio" name ="cabins" value ="13"> <img src="Images/mortenskaaten1.jpg" />MortenskÃ¥ten</div> </br>
 			<div class="content">
 				<div><a href="Images/mortenskaaten1.jpg"><img src="Images/mortenskaaten1.jpg"></a></div>
 				<div><ul id="info"><li><a href="Images/mortenskaaten2.jpg"><img src="Images/mortenskaaten2.jpg"></a></li>
@@ -185,7 +194,7 @@
 							   <li>Location:Forest</li>
 							   <li>Difficulty:2 </li></ul></div>
 			</div></div>
-			<div class="container collapsed"><div class="header"><input type ="radio" name ="cabins" value ="15"> <img src="Images/rindalsloa1.jpg" />Rindalsløa</div> </br>
+			<div class="container collapsed"><div class="header"><input type ="radio" name ="cabins" value ="15"> <img src="Images/rindalsloa1.jpg" />RindalslÃ¸a</div> </br>
 			<div class="content">
 				<div><a href="Images/rindalsloa1.jpg"><img src="Images/rindalsloa1.jpg"></a></div>
 				<div><ul id="info"><li><a href="Images/rindalsloa2.jpg"><img src="Images/rindalsloa2.jpg"></a></li>
@@ -195,7 +204,7 @@
 							   <li>Location:Forest</li>
 							   <li>Difficulty:2 </li></ul></div>
 			</div></div>
-			<div class="container collapsed"><div class="header"><input type ="radio" name ="cabins" value ="16"> <img src="Images/selbukaaten1.jpg" />Selbukåten</div> </br>
+			<div class="container collapsed"><div class="header"><input type ="radio" name ="cabins" value ="16"> <img src="Images/selbukaaten1.jpg" />SelbukÃ¥ten</div> </br>
 			<div class="content">
 				<div><a href="Images/selbukaaten1.jpg"><img src="Images/selbukaaten.jpg"></a></div>
 				<div><ul id="info"><li><a href="Images/selbukaaten2.jpg"><img src="Images/selbukaaten2.jpg"></a></li>
@@ -255,7 +264,7 @@
 							   <li>Location:Forest</li>
 							   <li>Difficulty:2 </li></ul></div>
 			</div></div>
-			<div class="container collapsed"><div class="header"><input type ="radio" name ="cabins" value ="22"> <img src="Images/vekvessaetra1.jpg" />Vekvessætra</div> </br>
+			<div class="container collapsed"><div class="header"><input type ="radio" name ="cabins" value ="22"> <img src="Images/vekvessaetra1.jpg" />VekvessÃ¦tra</div> </br>
 			<div class="content">
 				<div><a href="Images/vekvessaetra1.jpg"><img src="Images/vekvessaetra1.jpg"></a></div>
 				<div><ul id="info"><li><a href="Images/vekvessaetra2.jpg"><img src="Images/vekvessaetra2.jpg"></a></li>
@@ -265,7 +274,7 @@
 							   <li>Location:Forest</li>
 							   <li>Difficulty:2 </li></ul></div>
 			</div></div>
-			<div class="container collapsed"><div class="header"><input type ="radio" name ="cabins" value ="23"> <img src="Images/ovensenget1.jpg" />Øvensenget</div> </br>
+			<div class="container collapsed"><div class="header"><input type ="radio" name ="cabins" value ="23"> <img src="Images/ovensenget1.jpg" />Ãvensenget</div> </br>
 			<div class="content">
 				<div><a href="Images/ovensenget1.jpg"><img src="Images/ovensenget1.jpg"></a></div>
 				<div><ul id="info"><li><a href="Images/ovensenget2.jpg"><img src="Images/ovensenget2.jpg"></a></li>
