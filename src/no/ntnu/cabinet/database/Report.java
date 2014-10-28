@@ -9,6 +9,7 @@ public class Report {
 	private int wood;
 	private String damage;
 	private String missing;
+	private String email;
 	private Date report_date;
 		
 	public int getId() {
@@ -59,6 +60,14 @@ public class Report {
 		this.missing = missing;
 	}
 	
+	public String getEmail() {
+		return email;
+	}
+
+	public void setEmail(String email) {
+		this.email = email;
+	}
+
 	public Date getReport_date() {
 		return report_date;
 	}
