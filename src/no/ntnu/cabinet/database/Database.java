@@ -124,4 +124,22 @@ public class Database {
 		}
 		return rp;
 	}
+	
+	public Cabin getCabin(int cabin_id){
+		Cabin cabin = new Cabin();
+		try{
+			statement = connection.createStatement();
+			String sql = "select * from cabins where cabin_id = " + cabin_id + ";";
+			ResultSet rs = statement.executeQuery(sql);
+			while(rs.next()){
+				cabin.setName(rs.getString("cabin_name"));
+				cabin.setWood(rs.getInt("cabin_wood"));
+			}
+			rs.close();
+			statement.close();
+		} catch(SQLException se){
+			se.printStackTrace();
+		}
+		return cabin;
+	}
 }
