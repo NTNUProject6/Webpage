@@ -158,8 +158,12 @@
 		<textarea id="damage" class="input" name="damage" rows="7" cols="30"></textarea><br />
 	</div>
 	<div class="row">
-		<label for="missing">Missing Item:</label><br />
+		<label for="missing">Items missing from cabin:</label><br />
 		<textarea id="missing" class="input" name="missing" rows="7" cols="30"></textarea><br />
+	</div>
+	<div class="row">
+		<label for="other">Forgotten Items / Other:</label><br />
+		<textarea id="other" class="input" name="other" rows="7" cols="30"></textarea>
 	</div>
 	<input id="submit_button" type="submit" value="submit" />
 </form>			

@@ -59,6 +59,7 @@ public class RegisterReport extends HttpServlet {
 		report.setWood(Integer.parseInt(request.getParameter("wood")));
 		report.setDamage(request.getParameter("damage"));
 		report.setMissing(request.getParameter("missing"));
+		report.setOther(request.getParameter("other"));
 		report.setEmail(request.getParameter("email"));
 		report.setReport_date(date);
 		Database db = new Database();

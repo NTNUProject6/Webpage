@@ -19,7 +19,7 @@
 	   <div>Wood left: <%= cabin.getWood() %></div>
 	   <h4>Reports:</h4>
 	   <% for(Report r : reports) { %>
-	<div>Wood: <%= r.getWood()%> Damage: <%= r.getDamage()%> Missing: <%= r.getDamage()%> Report Date: <%= r.getReport_date()%> E-Mail: <%= r.getEmail()%></div>
+	<div>Wood: <%= r.getWood()%> Damage: <%= r.getDamage()%> Missing: <%= r.getDamage()%> Other: <%= r.getOther() %> Report Date: <%= r.getReport_date()%> E-Mail: <%= r.getEmail()%></div>
 	<% } %>
 		<h4>Bookings:</h4>
 	<% for(Booking b : bookings) {%>

@@ -10,6 +10,7 @@ public class Report {
 	private String damage;
 	private String missing;
 	private String email;
+	private String other;
 	private Date report_date;
 		
 	public int getId() {
@@ -60,6 +61,14 @@ public class Report {
 		this.missing = missing;
 	}
 	
+	public String getOther() {
+		return other;
+	}
+
+	public void setOther(String other) {
+		this.other = other;
+	}
+
 	public String getEmail() {
 		return email;
 	}

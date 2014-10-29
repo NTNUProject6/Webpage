@@ -84,14 +84,15 @@ public class Database {
 	public void addReport(Report report) {
 		try{
 			statement = connection.createStatement();
-			String query = "INSERT INTO reports (cabin_id, wood, damage, missing, email, report_date) "
-					+ "VALUES (1, ?, ?, ?, ?, ?)";
+			String query = "INSERT INTO reports (cabin_id, wood, damage, missing, other, email, report_date) "
+					+ "VALUES (1, ?, ?, ?, ?, ?, ?)";
 			PreparedStatement pStatement = connection.prepareStatement(query); 
 			pStatement.setInt(1, report.getWood());
 			pStatement.setString(2, report.getDamage());
 			pStatement.setString(3, report.getMissing());
-			pStatement.setString(4, report.getEmail());
-			pStatement.setDate(5, new java.sql.Date(report.getReport_date().getTime()));
+			pStatement.setString(4, report.getOther());
+			pStatement.setString(5, report.getEmail());
+			pStatement.setDate(6, new java.sql.Date(report.getReport_date().getTime()));
 			//pStatement.setInt(1, report.getBooking_id());
 
 			pStatement.execute();
@@ -115,6 +116,7 @@ public class Database {
 				r.setMissing(rs.getString("missing"));
 				r.setReport_date(rs.getDate("report_date"));
 				r.setEmail(rs.getString("email"));
+				r.setOther(rs.getString("other"));
 				rp.add(r);
 			}
 			rs.close();
