@@ -42,7 +42,8 @@ public class RegisterBooking extends HttpServlet {
 	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-	 	SimpleDateFormat sdf = new SimpleDateFormat("dd-M-yyyy");
+	 	request.setCharacterEncoding("UTF-8");
+		SimpleDateFormat sdf = new SimpleDateFormat("dd-M-yyyy");
 	 	Date from_date;
 	 	Date to_date;
 	 	try {
