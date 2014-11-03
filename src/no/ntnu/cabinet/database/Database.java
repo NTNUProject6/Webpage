@@ -137,12 +137,15 @@ public class Database {
 			while(rs.next()){
 				cabin.setName(rs.getString("cabin_name"));
 				cabin.setWood(rs.getInt("cabin_wood"));
+				cabin.setLat(rs.getDouble("lat"));
+				cabin.setLng(rs.getDouble("lng"));
 			}
 			rs.close();
 			statement.close();
 		} catch(SQLException se){
 			se.printStackTrace();
 		}
+		cabin.setId(cabin_id);
 		return cabin;
 	}
 }

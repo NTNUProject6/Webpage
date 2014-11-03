@@ -10,6 +10,8 @@ public class Cabin {
 	private int height;
 	private int travel_time;
 	private int wood;
+	private double lat;
+	private double lng;
 	
 	
 	//setter & getter
@@ -60,5 +62,17 @@ public class Cabin {
 	}
 	public void setWood(int wood) {
 		this.wood = wood;
+	}
+	public double getLat() {
+		return lat;
+	}
+	public void setLat(double lat) {
+		this.lat = lat;
+	}
+	public double getLng() {
+		return lng;
+	}
+	public void setLng(double lng) {
+		this.lng = lng;
 	}
 }
