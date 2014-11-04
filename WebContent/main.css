@@ -1,0 +1,118 @@
+
+.mainElement{
+   position:absolute;
+     width:65em;
+     height:43em;
+     z-index:15;
+     top:20%;
+     left:27%;
+	overflow:auto;
+	
+}
+
+#map-canvas{
+   position:absolute;
+     z-index:15;
+     top:7em;
+     bottom:5em;
+     left:12em;
+     right:7em;
+     margin:-100px 0 0 -150px;
+	overflow:auto;
+	
+	}	
+fieldset{
+  
+}
+
+.center_div {
+    
+    margin-left: 5em;
+    
+}
+
+#footer{
+  position:absolute;
+    font-size:1.275em;
+     
+     z-index:15;
+     bottom:2%;
+     left:44%;
+}
+#contact-form{
+	padding: 10%;
+}
+.container{
+  background:#ccc;
+  margin:10px;
+  
+}
+	
+.header{
+  background:url('http://cdn1.iconfinder.com/data/icons/vaga/arrow_up.png') no-repeat;
+  background-position:right 0px;
+  cursor:pointer;
+  margin-bottom:-15px;
+}
+.header img{
+padding-top: 5px;
+width: 5%
+}
+.collapsed .header{
+  background-image:url('http://cdn2.iconfinder.com/data/icons/vaga/arrow_down.png');
+}
+#container{
+  text-align: center;
+}
+.content{
+  height:auto;
+  min-height:100px;
+  overflow:hidden;
+}
+.content div{
+display:inline-block;
+list-style: none;
+vertical-align: middle;
+}
+.content img{
+margin-bottom: 5px;
+margin-left:25px;
+width:35.2em;
+}
+.content li img{
+width:11em;
+margin:3px;
+}
+.content ul{
+list-style: none;
+}
+
+.collapsed .content{
+  min-height:0px;
+  height:0px;
+}
+.mailsubmit{
+  position:fixed;
+  text-align: left;
+  top: 1.8em;
+} 
+.menu{
+  vertical-align: center;
+} 
+.thumbnail img{
+  width: 3em;
+}
+div.menu{
+  margin-left: 2.5em;
+  margin-top:4em;
+}
+div.menu ul{
+  margin-left: -1em;
+  list-style-type: none;
+}
+div.menu button{
+  margin: 2px;
+}
+p{
+  font-size:1.275em;
+}

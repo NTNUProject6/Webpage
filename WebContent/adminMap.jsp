@@ -10,7 +10,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-<title>Test Map</title>
+<title>Admin Map</title>
 <link rel="stylesheet" type="text/css" href="main.css">
 <meta name="viewport" content="initial-scale=1.0, user-scalable=no">
 <meta charset="utf-8">
@@ -63,44 +63,10 @@ google.maps.event.addDomListener(window, 'load', initialize);
 
 </script>
 
-
-
-
-
-<script>
-
-
-</script>
-
-
-
-
 </head>
 <body>
 
-	<div class="menu">
-	<a href="index.html" >
-    <img src="koiene.png " alt="logo" class="thumbnails" />
-    </a>
-	<ul >
-	
-		<!--Home<br>-->
-		<li><a id="mybutton" href="index.html" title="Home">
-		  <button>Home</button></a></li>
-		<!-- <a href="Homepage.html" target="_blank">Home</a>-->
-		<!--Register<br>-->
-		<li><a id="mybutton" href="Registration.html" title="Registration">
-		  <button>Register</button>
-		 </a></li><!--Contact<br>-->
-		<li><a id="mybutton" href="report.html" title="Report">
-		  <button>Report</button></a></li>
-		<!--Login<br>-->
-		<li><a id="mybutton" href="Login.html" title="Admin Login">
-		  <button>Login</button></a></li>
-
-	</ul>
-	</div>
-
+	<%@ include file="menu.jsp" %>
 <div id="map-canvas"></div>
 </body>
 </html>

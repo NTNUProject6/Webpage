@@ -2,39 +2,21 @@
     pageEncoding="UTF-8" import="no.ntnu.cabinet.CabinetUtils"%>
 <!DOCTYPE html>
 <html>
-<head>
-<title> Reporting </title>
 <!--For including Norwegian text in the webpage-->
 <meta charset="UTF-8">
+</a>
+<head>
+<link rel="stylesheet" type="text/css" href="main.css">
+
+<title> 
+	Reporting
+</title>
 </head>
 <body>
-<div id="nav">
-		<!--Home<br>-->
-		<a id="mybutton" href="index.jsp" title="Home">
-		  <button>Home</button>
-		 </a>
-		<!-- <a href="Homepage.html" target="_blank">Home</a>-->
-		<!--Register<br>-->
-		<a id="mybutton" href="Registration.jsp" title="Registration">
-		  <button>Register</button>
-		 </a>
-		<!--Contact<br>-->
-		<a id="mybutton" href="report.jsp" title="Report">
-		  <button>Report</button>
-		 </a>
-		<!--Login<br>-->
-		<a id="mybutton" href="Login.jsp" title="Admin Login">
-		  <button>Login</button>
-		 </a>
-		 
-	<% if(CabinetUtils.IsAdmin(session)) { %>
-		<a id="mybutton" href="AdminLogout" title="Admin Logout">
-		  <button>Logout</button>
-		 </a>
-	<% } %>
-
+<%@ include file="menu.jsp" %>
 	</div>
 
+<div class="mainElement">	
 <form id="contact_form" action="RegisterReport" method="post">
 	<div class="row">
 		<label for="cabin">Cabin Name:</label>
@@ -168,6 +150,7 @@
 	<input id="submit_button" type="submit" value="submit" />
 </form>			
 
+</div>
 </body>
 </html>
 

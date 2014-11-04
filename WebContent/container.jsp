@@ -5,7 +5,7 @@
 <!--For including Norwegian text in the webpage-->
 <meta charset="UTF-8">
  <head>
- <link rel="stylesheet" type="text/css" href="container.css">
+ <link rel="stylesheet" type="text/css" href="main.css">
  <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
  <script src="container.js"></script>
 
@@ -38,35 +38,9 @@
  <title>&lt;input type=&quot;email&quot;&gt;</title>
 </head>
  <body>
- <div id="cabinpage">
-	<div id="nav">
-		<!--Home<br>-->
-		<a id="mybutton" href="index.jsp" title="Home">
-		  <button>Home</button>
-		 </a>
-		<!-- <a href="Homepage.html" target="_blank">Home</a>-->
-		<!--Register<br>-->
-		<a id="mybutton" href="Registration.jsp" title="Registration">
-		  <button>Register</button>
-		 </a>
-		<!--Contact<br>-->
-		<a id="mybutton" href="report.jsp" title="Report">
-		  <button>Report</button>
-		 </a>
-		<!--Login<br>-->
-		<a id="mybutton" href="Login.jsp" title="Admin Login">
-		  <button>Login</button>
-		 </a>
-		 
-	<% if(CabinetUtils.IsAdmin(session)) { %>
-		<a id="mybutton" href="AdminLogout" title="Admin Logout">
-		  <button>Logout</button>
-		 </a>
-	<% } %>
-	</div>
- <div id="container">
- 
-  </div>
+<%@ include file="menu.jsp" %>
+
+<div class="mainElement">
  <form action="RegisterBooking" method="post">
  <input type="hidden" name="from_date" value="<%= from_date_string %>">
  <input type="hidden" name="to_date" value="<%= to_date_string %>">
@@ -335,7 +309,7 @@
 	
  </form>
  </div>
-
+</div>
 </div>
  </body>
 </html>
