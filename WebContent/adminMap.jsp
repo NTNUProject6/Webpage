@@ -1,11 +1,17 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8" import="no.ntnu.cabinet.database.*"%>
+    pageEncoding="UTF-8" import="no.ntnu.cabinet.database.*,
+    no.ntnu.cabinet.CabinetUtils"%>
+
+<%	// TODO: Not admin error page
+	if(!CabinetUtils.IsAdmin(session))
+		response.sendRedirect("index.jsp");
+%>
 
 <!DOCTYPE html>
 <html>
 <head>
-<title>Test Map</title>
-
+<title>Admin Map</title>
+<link rel="stylesheet" type="text/css" href="main.css">
 <meta name="viewport" content="initial-scale=1.0, user-scalable=no">
 <meta charset="utf-8">
 <style>
@@ -57,22 +63,10 @@ google.maps.event.addDomListener(window, 'load', initialize);
 
 </script>
 
-
-
-
-
-<script>
-
-
-</script>
-
-
-
-
 </head>
 <body>
 
-
+	<%@ include file="menu.jsp" %>
 <div id="map-canvas"></div>
 </body>
 </html>

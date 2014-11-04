@@ -3,6 +3,10 @@
     import="java.util.ArrayList,java.text.SimpleDateFormat, 
     no.ntnu.cabinet.CabinetUtils,no.ntnu.cabinet.database.*"%>
 
+<%	// TODO: Not admin error page
+	if(!CabinetUtils.IsAdmin(session))
+		response.sendRedirect("index.jsp");
+%>
 <!DOCTYPE html>
 <html>
     <head>

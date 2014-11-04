@@ -8,39 +8,15 @@
 </title>
 <!--For including Norwegian text in the webpage-->
 <meta charset="UTF-8">
+<link rel="stylesheet" type="text/css" href="main.css">
 
 </head>
 
 <body>
-	<div id="nav">
-		<!--Home<br>-->
-		<a id="mybutton" href="index.jsp" title="Home">
-		  <button>Home</button>
-		 </a>
-		<!-- <a href="Homepage.html" target="_blank">Home</a>-->
-		<!--Register<br>-->
-		<a id="mybutton" href="Registration.jsp" title="Registration">
-		  <button>Register</button>
-		 </a>
-		<!--Contact<br>-->
-		<a id="mybutton" href="report.jsp" title="Report">
-		  <button>Report</button>
-		 </a>
-		<!--Login<br>-->
-		<a id="mybutton" href="Login.jsp" title="Admin Login">
-		  <button>Login</button>
-		 </a>
-	<% if(CabinetUtils.IsAdmin(session)) { %>
-		<a id="mybutton" href="AdminLogout" title="Admin Logout">
-		  <button>Logout</button>
-		 </a>
-	<% } %>
-
-	</div>
-	
-	
+	<%@ include file="menu.jsp" %>	
+	<div class="mainElement">	
 		<div class="row">
-		<label for="date">StartDate:</label>
+		<label for="date">StartDate:</label></br>
 	
 <form action="container.jsp" method="post">
 <select name="from_day">
@@ -95,7 +71,7 @@
 	<option value="2015">2015
 	<option value="2016">2016
 </select>
-</div><label>EndDate:</label>
+		</div><label>EndDate:</label></br>
 	
 <select name="to_day">
 	<option value="01">1
@@ -151,5 +127,6 @@
 </select>
 <input id="submit_button" type="submit" value="submit" />
 </form>
+	</div>
 </body>
 </html>
