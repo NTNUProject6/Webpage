@@ -58,6 +58,26 @@ public class Database {
 		}
 	}
 	
+	public Booking getBookingById(int booking_id){
+		Booking b = new Booking();
+		
+		try{
+			statement = connection.createStatement();
+			String sql = "select * from bookings where booking_id = " + booking_id;
+			ResultSet rs = statement.executeQuery(sql);
+			b.setId(rs.getInt("booking_id"));
+			b.setUser_id(rs.getString("user_id"));
+			b.setCabin_id(rs.getInt("cabin_id"));
+			b.setDate_From(rs.getDate("date_from"));
+			b.setDate_To(rs.getDate("date_to"));
+		} catch(SQLException se){
+			se.printStackTrace();
+		}
+		
+		return b;
+		
+	}
+	
 	public ArrayList<Booking> getBooking(int cabin_id){
 		ArrayList<Booking> ab = new ArrayList<Booking>();
 		try{
