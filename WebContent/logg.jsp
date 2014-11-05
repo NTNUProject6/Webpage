@@ -19,6 +19,9 @@
 		<script type='text/javascript' src='loggJs/standardista-table-sorting.js'></script>
     </head>
     <body>
+    
+    <%@ include file="menu.jsp" %>
+    
 	<div class= "mainElement">
         <table class="sortable" >
             <thead>
