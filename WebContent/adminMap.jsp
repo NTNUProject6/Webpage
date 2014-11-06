@@ -66,7 +66,7 @@ google.maps.event.addDomListener(window, 'load', initialize);
 </head>
 <body>
 
-	<%@ include file="menu.jsp" %>
+	<%@ include file="WEB-INF/menu.jsp" %>
 <div id="map-canvas"></div>
 </body>
 </html>

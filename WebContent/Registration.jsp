@@ -13,12 +13,12 @@
 </head>
 
 <body>
-	<%@ include file="menu.jsp" %>	
+	<%@ include file="WEB-INF/menu.jsp" %>	
 	<div class="mainElement">	
-		<div class="row">
+<form action="container.jsp" method="post">
+	<div class="row">
 		<label for="date">StartDate:</label></br>
 	
-<form action="container.jsp" method="post">
 <select name="from_day">
 	<option value="01">1
 	<option value="2">2

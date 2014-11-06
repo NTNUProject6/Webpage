@@ -20,7 +20,7 @@
     </head>
     <body>
     
-    <%@ include file="menu.jsp" %>
+    <%@ include file="WEB-INF/menu.jsp" %>
     
 	<div class= "mainElement">
         <table class="sortable" >
