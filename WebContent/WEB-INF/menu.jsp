@@ -21,12 +21,12 @@
 		<li><a id="mybutton" href="Login.jsp" title="Admin Login">
 			<button>Login</button></a></li>
 		<% } else { %>
-		<li><a id="mybutton" href="AdminLogout" title="Admin Logout">
-		  <button>Logout</button></a></li>
 		<li><a id="mybutton" href="adminMap.jsp" title="Map">
 			<button>Map</button></a></li>
 		<li><a id="mybutton" href="logg.jsp" title="Report Log">
 			<button>Report Log</button></a></li>
+		<li><a id="mybutton" href="AdminLogout" title="Admin Logout">
+		  <button>Logout</button></a></li>
 		<% } %>
 	</ul>
 </div> 
