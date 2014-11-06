@@ -135,15 +135,15 @@
 	</div>
 	<div class="row">
 		<label for="damage">Damaged Item:</label><br />
-		<textarea id="damage" class="input" name="damage" rows="7" cols="30"></textarea><br />
+		<input type="text" id="damage" class="input" name="damage" size="30"></input><br />
 	</div>
 	<div class="row">
 		<label for="missing">Items missing from cabin:</label><br />
-		<textarea id="missing" class="input" name="missing" rows="7" cols="30"></textarea><br />
+		<input type="text" id="missing" class="input" name="missing" size="30"></input><br />
 	</div>
 	<div class="row">
 		<label for="other">Forgotten Items / Other:</label><br />
-		<textarea id="other" class="input" name="other" rows="7" cols="30"></textarea>
+		<input type="text" id="other" class="input" name="other" size="30"></input>
 	</div>
 	<input id="submit_button" type="submit" value="submit" />
 </form>			
