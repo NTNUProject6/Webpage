@@ -24,7 +24,7 @@
 	   	<p>Date: <%= r.getReport_date() %></p>
 	   	<p>Contact: <%= r.getEmail() %></p>
 	   	<p>Cabin: <%= c.getName() %></p>
-	   	<p>Wood left: <%= r.getWood() %></p>
+	   	<p>Wood left: <%= r.getWood() >= 0 ? r.getWood() : "N/A" %></p>
 	   	<p>Damaged: <%= r.getDamage() %></p>
 	   	<p>Missing: <%= r.getMissing() %></p>
 	   	<p>Other: <%= r.getOther() %></p>

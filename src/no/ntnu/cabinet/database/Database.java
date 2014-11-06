@@ -125,8 +125,6 @@ public class Database {
 			pStatement.setString(5, report.getOther());
 			pStatement.setString(6, report.getEmail());
 			pStatement.setDate(7, new java.sql.Date(report.getReport_date().getTime()));
-			//pStatement.setInt(1, report.getBooking_id());
-
 			pStatement.execute();
 			
 			ResultSet rs = pStatement.getGeneratedKeys();
@@ -201,6 +199,7 @@ public class Database {
 			while(rs.next()){
 				cabin.setName(rs.getString("cabin_name"));
 				cabin.setWood(rs.getInt("cabin_wood"));
+				cabin.setWood_updated(rs.getDate("wood_updated"));
 				cabin.setLat(rs.getDouble("lat"));
 				cabin.setLng(rs.getDouble("lng"));
 			}
@@ -211,5 +210,24 @@ public class Database {
 		}
 		cabin.setId(cabin_id);
 		return cabin;
+	}
+	
+	public boolean updateWood(Report r) {
+		Cabin c = getCabin(r.getCabin_id());
+		if(c.getWood_updated().compareTo(r.getReport_date()) <= 0) {
+			try{
+				statement = connection.createStatement();
+				String query = "UPDATE cabins SET cabin_wood=?,wood_updated=? WHERE cabin_id=" + c.getId();
+				PreparedStatement pStatement = connection.prepareStatement(query, Statement.RETURN_GENERATED_KEYS);
+				pStatement.setInt(1, r.getWood());
+				pStatement.setDate(2, new java.sql.Date(r.getReport_date().getTime()));
+				pStatement.execute();
+				statement.close();
+			} catch(SQLException se) {
+				se.printStackTrace();
+			}
+			return true;
+		}
+		return false;
 	}
 }

@@ -73,18 +73,24 @@ public class RegisterReport extends HttpServlet {
 	   	}
 	   	
 	   	int wood;
-	   	try {
-	   		wood = Integer.parseInt(request.getParameter("wood"));
-	   	} catch(Exception e) {
-			request.setAttribute("error", "Invalid wood count.");
-			erd.forward(request, response);
-			return;
-	   	}
-	   	
-	   	if(wood < 0) {
-			request.setAttribute("error", "Negative wood count.");
-			erd.forward(request, response);
-			return;
+	   	String wood_string = request.getParameter("wood");
+	   	if(wood_string != null 
+	   			&& wood_string.equals("na")) {
+	   		wood = -1;
+	   	} else {
+		   	try {
+		   		wood = Integer.parseInt(wood_string);
+		   	} catch(Exception e) {
+				request.setAttribute("error", "Invalid wood count.");
+				erd.forward(request, response);
+				return;
+		   	}
+		   	
+		   	if(wood < 0) {
+				request.setAttribute("error", "Negative wood count.");
+				erd.forward(request, response);
+				return;
+		   	}
 	   	}
 	   	
 	   	String email = request.getParameter("email");
@@ -112,7 +118,15 @@ public class RegisterReport extends HttpServlet {
 		report.setReport_date(date);
 		Database db = new Database();
 		int report_id = db.addReport(report);
+		if(wood >= 0)
+			db.updateWood(report);
 		db.close();
+		
+		if(report_id < 0) {
+			request.setAttribute("error", "Unknown error registering report. Please try again.");
+			erd.forward(request, response);
+			return;
+		}
 		
 		RequestDispatcher rd = request.getRequestDispatcher("WEB-INF/report_confirmation.jsp");
 		request.setAttribute("report_id", report_id);

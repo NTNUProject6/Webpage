@@ -56,7 +56,7 @@
 						<td><%= fmt.format(r.getReport_date()) %></td>
 	                    <td><%= cabin.getName() %></td>       
 	                    <td><%= r.getEmail() %></td> 
-						<td><%= r.getWood() %></td> 
+						<td><%= r.getWood() >= 0 ? r.getWood() : "N/A" %></td> 
 						<td><%= r.getDamage() %></td>
 						<td><%= r.getMissing() %></td>
 						<td><%= r.getOther() %></td> 
@@ -75,7 +75,7 @@
 						<td><%= fmt.format(r.getReport_date()) %></td>
 	                    <td><%= cabin.getName() %></td>       
 	                    <td><%= r.getEmail() %></td> 
-						<td><%= r.getWood() %></td> 
+						<td><%= r.getWood() >= 0 ? r.getWood() : "N/A" %></td> 
 						<td><%= r.getDamage() %></td>
 						<td><%= r.getMissing() %></td>
 						<td><%= r.getOther() %></td> 

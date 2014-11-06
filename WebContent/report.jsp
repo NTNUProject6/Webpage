@@ -110,6 +110,7 @@
 		<label for="wood">Wood left:</label>
 		
 	<select name="wood">
+	<option value="na" selected>N/A
 	 <option value="0">0
 	 <option value="1">1
 	 <option value="2">2

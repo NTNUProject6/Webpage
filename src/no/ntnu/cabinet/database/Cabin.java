@@ -1,5 +1,7 @@
 package no.ntnu.cabinet.database;
 
+import java.util.Date;
+
 public class Cabin {
 	
 	private int id;
@@ -10,6 +12,7 @@ public class Cabin {
 	private int height;
 	private int travel_time;
 	private int wood;
+	private Date wood_updated;
 	private double lat;
 	private double lng;
 	
@@ -62,6 +65,12 @@ public class Cabin {
 	}
 	public void setWood(int wood) {
 		this.wood = wood;
+	}
+	public Date getWood_updated() {
+		return wood_updated;
+	}
+	public void setWood_updated(Date wood_updated) {
+		this.wood_updated = wood_updated;
 	}
 	public double getLat() {
 		return lat;
