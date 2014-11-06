@@ -4,7 +4,6 @@
 <html>
 <!--For including Norwegian text in the webpage-->
 <meta charset="UTF-8">
-</a>
 <head>
 <link rel="stylesheet" type="text/css" href="main.css">
 
@@ -14,7 +13,6 @@
 </head>
 <body>
 <%@ include file="WEB-INF/menu.jsp" %>
-	</div>
 
 <div class="mainElement">	
 <form id="contact_form" action="RegisterReport" method="post">

@@ -17,7 +17,7 @@
 	<div class="mainElement">	
 <form action="container.jsp" method="post">
 	<div class="row">
-		<label for="date">StartDate:</label></br>
+		<label for="date">StartDate:</label><br />
 	
 <select name="from_day">
 	<option value="01">1
@@ -71,7 +71,7 @@
 	<option value="2015">2015
 	<option value="2016">2016
 </select>
-		</div><label>EndDate:</label></br>
+		</div><label>EndDate:</label><br />
 	
 <select name="to_day">
 	<option value="01">1
