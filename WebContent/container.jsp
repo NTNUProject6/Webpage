@@ -10,23 +10,32 @@
  <script src="container.js"></script>
 
  
- <%
-  	String from_date_string = request.getParameter("from_day")
+ <% Date from_date;
+ 	Date to_date;
+ 	String from_date_string;
+ 	String to_date_string;
+ 	try {
+   	from_date_string = request.getParameter("from_day")
    		+ "-" + request.getParameter("from_month") 
    		+ "-" + request.getParameter("from_year");
-   	String to_date_string = request.getParameter("to_day") 
+   	to_date_string = request.getParameter("to_day") 
   	 	+ "-" + request.getParameter("to_month") 
   	 	+ "-" + request.getParameter("to_year");
 
    	SimpleDateFormat sdf = new SimpleDateFormat("dd-M-yyyy");
-   	Date from_date = sdf.parse(from_date_string);
-   	Date to_date = sdf.parse(to_date_string);
+   	from_date = sdf.parse(from_date_string);
+   	to_date = sdf.parse(to_date_string);
+ } catch(Exception e) {
+	request.setAttribute("error", "Invalid date values.");
+	request.getRequestDispatcher("WEB-INF/register_error.jsp").forward(request, response);
+	return;
+ }
 
    	// Redirect back to registration if to date is after from date
    	// TODO: Error page?
    	if(from_date.after(to_date)) {
-   		response.setStatus(HttpServletResponse.SC_MOVED_TEMPORARILY);
-   		response.setHeader("Location", "Registration.jsp");
+   		request.setAttribute("error", "Start date is after end date.");
+		request.getRequestDispatcher("WEB-INF/register_error.jsp").forward(request, response);
    	}
    	
    	boolean[] cabin_is_free = new boolean[23]; 	
