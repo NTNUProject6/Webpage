@@ -25,6 +25,8 @@
 			<button>Map</button></a></li>
 		<li><a id="mybutton" href="logg.jsp" title="Report Log">
 			<button>Report Log</button></a></li>
+		<li><a id="mybutton" href="booking_log.jsp" title="Booking Log">
+			<button>Booking Log</button></a></li>
 		<li><a id="mybutton" href="AdminLogout" title="Admin Logout">
 		  <button>Logout</button></a></li>
 		<% } %>
