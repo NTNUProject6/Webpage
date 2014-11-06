@@ -4,6 +4,7 @@ import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.sql.Statement;
 import java.util.ArrayList;
 
 public class Database {
@@ -38,22 +39,31 @@ public class Database {
 		}
 	}
 	
-	public void addBooking(Booking booking){
+	public int addBooking(Booking booking){
 		try{
 			statement = connection.createStatement();
 			String query = "INSERT INTO bookings (user_id, cabin_id, date_from, date_to) "
 					+ "VALUES (?, ?, ?, ?)";
-			PreparedStatement pStatement = connection.prepareStatement(query); 
+			PreparedStatement pStatement = connection.prepareStatement(query, Statement.RETURN_GENERATED_KEYS); 
 			pStatement.setString(1, booking.getUser_id());
 			pStatement.setInt(2, booking.getCabin_id());
 			pStatement.setDate(3, new java.sql.Date(booking.getDate_From().getTime()));
 			pStatement.setDate(4, new java.sql.Date(booking.getDate_To().getTime()));
 			
 			pStatement.execute();
-			
+			ResultSet rs = pStatement.getGeneratedKeys();
 			statement.close();
+			if(rs.next()) {
+				int id = rs.getInt(1);
+				rs.close();
+				return id;
+			} else {
+				rs.close();
+				return -2;
+			}
 		} catch (Exception e){
 			e.printStackTrace();
+			return -1;
 		}
 	}
 	
@@ -64,11 +74,13 @@ public class Database {
 			statement = connection.createStatement();
 			String sql = "select * from bookings where booking_id = " + booking_id;
 			ResultSet rs = statement.executeQuery(sql);
-			b.setId(rs.getInt("booking_id"));
-			b.setUser_id(rs.getString("user_id"));
-			b.setCabin_id(rs.getInt("cabin_id"));
-			b.setDate_From(rs.getDate("date_from"));
-			b.setDate_To(rs.getDate("date_to"));
+			if(rs.next()) {
+				b.setId(rs.getInt("booking_id"));
+				b.setUser_id(rs.getString("user_id"));
+				b.setCabin_id(rs.getInt("cabin_id"));
+				b.setDate_From(rs.getDate("date_from"));
+				b.setDate_To(rs.getDate("date_to"));
+			}
 		} catch(SQLException se){
 			se.printStackTrace();
 		}
