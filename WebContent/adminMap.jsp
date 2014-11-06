@@ -2,9 +2,8 @@
     pageEncoding="UTF-8" import="no.ntnu.cabinet.database.*,
     no.ntnu.cabinet.CabinetUtils"%>
 
-<%	// TODO: Not admin error page
-	if(!CabinetUtils.IsAdmin(session))
-		response.sendRedirect("index.jsp");
+<%	if(!CabinetUtils.IsAdmin(session))
+		request.getRequestDispatcher("WEB-INF/notadmin.jsp").forward(request, response);
 %>
 
 <!DOCTYPE html>

@@ -3,9 +3,8 @@
     import="java.util.ArrayList,java.text.SimpleDateFormat, 
     no.ntnu.cabinet.CabinetUtils,no.ntnu.cabinet.database.*"%>
 
-<%	// TODO: Not admin error page
-	if(!CabinetUtils.IsAdmin(session))
-		response.sendRedirect("index.jsp");
+<%	if(!CabinetUtils.IsAdmin(session))
+		request.getRequestDispatcher("WEB-INF/notadmin.jsp").forward(request, response);
 %>
 <!DOCTYPE html>
 <html>
