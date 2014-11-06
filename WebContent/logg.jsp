@@ -29,6 +29,8 @@
                     <th>Cabin</th>
                     <th>Email</th>
 					<th>Wood</th>
+					<th>Damage</th>
+					<th>Missing</th>
 					<th>Other</th>
                 </tr>
             </thead>
@@ -55,6 +57,8 @@
 	                    <td><%= cabin.getName() %></td>       
 	                    <td><%= r.getEmail() %></td> 
 						<td><%= r.getWood() %></td> 
+						<td><%= r.getDamage() %></td>
+						<td><%= r.getMissing() %></td>
 						<td><%= r.getOther() %></td> 
 	                </tr>
 				
@@ -72,6 +76,8 @@
 	                    <td><%= cabin.getName() %></td>       
 	                    <td><%= r.getEmail() %></td> 
 						<td><%= r.getWood() %></td> 
+						<td><%= r.getDamage() %></td>
+						<td><%= r.getMissing() %></td>
 						<td><%= r.getOther() %></td> 
 	                </tr>
 	                <%
@@ -81,6 +87,16 @@
 				}
 				db.close();
 				%>
+				
+				<tfoot>
+				<tr>
+						<td></td>
+	                    <td></td>       
+	                    <td></td> 
+						<td></td> 
+						<td></td> 
+				</tr>
+				</tfoot>
             </tbody>
         </table>
 
