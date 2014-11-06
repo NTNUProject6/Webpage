@@ -4,6 +4,7 @@ import java.io.IOException;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
+import java.util.Calendar; 
 
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
@@ -56,6 +57,20 @@ public class RegisterReport extends HttpServlet {
 			erd.forward(request, response);
 			return;
 		}
+	   	
+	   	if(date.after(new Date())) {
+	   		request.setAttribute("error", "Issued report date is in the future.");
+			erd.forward(request, response);
+			return;
+	   	}
+	   	
+	   	Calendar cal = Calendar.getInstance();
+	   	cal.add(Calendar.MONTH, -2);
+	   	if(cal.getTime().after(date)) {
+	   		request.setAttribute("error", "Issued report date is too far ago.");
+			erd.forward(request, response);
+			return;
+	   	}
 	   	
 	   	int cabin_id;
 	   	try {
