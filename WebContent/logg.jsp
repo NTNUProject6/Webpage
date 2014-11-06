@@ -38,21 +38,46 @@
 				boolean even = true;
 				SimpleDateFormat fmt = new SimpleDateFormat("dd-MM-yyyy");
 				Database db = new Database();
-				for(int i = 1; i <= 23; i++) {
-					Cabin cabin = db.getCabin(i);
-					ArrayList<Report> reports = db.getReports(i);
+				int filter;
+				try {
+					filter = Integer.parseInt(request.getParameter("filter"));
+				} catch(Exception e) {
+					filter = -1;
+				}
+				
+				if(filter > 0) {
+					Cabin cabin = db.getCabin(filter);
+					ArrayList<Report> reports = db.getReports(filter);
 					for(Report r : reports) {
 				%>
-                <tr<%= even ? "" : " class='odd'" %>>
-					<td><%= fmt.format(r.getReport_date()) %></td>
-                    <td><%= cabin.getName() %></td>       
-                    <td><%= r.getEmail() %></td> 
-					<td><%= r.getWood() %></td> 
-					<td><%= r.getOther() %></td> 
-                </tr>
-                <%
-					}
+					 <tr<%= even ? "" : " class='odd'" %>>
+						<td><%= fmt.format(r.getReport_date()) %></td>
+	                    <td><%= cabin.getName() %></td>       
+	                    <td><%= r.getEmail() %></td> 
+						<td><%= r.getWood() %></td> 
+						<td><%= r.getOther() %></td> 
+	                </tr>
+				
+				<%
 					even = !even;
+					}
+				} else {
+					for(int i = 1; i <= 23; i++) {
+						Cabin cabin = db.getCabin(i);
+						ArrayList<Report> reports = db.getReports(i);
+						for(Report r : reports) {
+					%>
+	                <tr<%= even ? "" : " class='odd'" %>>
+						<td><%= fmt.format(r.getReport_date()) %></td>
+	                    <td><%= cabin.getName() %></td>       
+	                    <td><%= r.getEmail() %></td> 
+						<td><%= r.getWood() %></td> 
+						<td><%= r.getOther() %></td> 
+	                </tr>
+	                <%
+	                		even = !even;
+						}
+					}
 				}
 				db.close();
 				%>
