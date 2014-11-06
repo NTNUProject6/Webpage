@@ -112,12 +112,12 @@ public class Database {
 		return ab;
 	}
 	
-	public void addReport(Report report) {
+	public int addReport(Report report) {
 		try{
 			statement = connection.createStatement();
 			String query = "INSERT INTO reports (cabin_id, wood, damage, missing, other, email, report_date) "
 					+ "VALUES (?, ?, ?, ?, ?, ?, ?)";
-			PreparedStatement pStatement = connection.prepareStatement(query); 
+			PreparedStatement pStatement = connection.prepareStatement(query, Statement.RETURN_GENERATED_KEYS); 
 			pStatement.setInt(1, report.getCabin_id());
 			pStatement.setInt(2, report.getWood());
 			pStatement.setString(3, report.getDamage());
@@ -129,10 +129,20 @@ public class Database {
 
 			pStatement.execute();
 			
+			ResultSet rs = pStatement.getGeneratedKeys();
 			statement.close();
+			if(rs.next()) {
+				int id = rs.getInt(1);
+				rs.close();
+				return id;
+			} else {
+				rs.close();
+				return -2;
+			}
 		} catch (Exception e){
 			e.printStackTrace();
 		}
+		return -1;
 	}
 	
 	public ArrayList<Report> getReports(int cabin_id){
@@ -158,6 +168,29 @@ public class Database {
 		}
 		return rp;
 	}
+	
+	public Report getReportById(int report_id) {
+		Report r = new Report();
+		try {
+			statement = connection.createStatement();
+			String sql = "select * from reports where id = " + report_id;
+			ResultSet rs = statement.executeQuery(sql);
+			if(rs.next()) {
+				r.setCabin_id(rs.getInt("cabin_id"));
+				r.setWood(rs.getInt("wood"));
+				r.setDamage(rs.getString("damage"));
+				r.setMissing(rs.getString("missing"));
+				r.setReport_date(rs.getDate("report_date"));
+				r.setEmail(rs.getString("email"));
+				r.setOther(rs.getString("other"));
+			}
+		} catch(SQLException se){
+			se.printStackTrace();
+		}
+		
+		return r;
+	}
+	
 	
 	public Cabin getCabin(int cabin_id){
 		Cabin cabin = new Cabin();

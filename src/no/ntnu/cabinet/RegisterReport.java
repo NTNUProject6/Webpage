@@ -5,6 +5,7 @@ import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 
+import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -41,6 +42,8 @@ public class RegisterReport extends HttpServlet {
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		request.setCharacterEncoding("UTF-8");
+	 	RequestDispatcher erd = request.getRequestDispatcher("WEB-INF/report_error.jsp");
+
 		String date_string = request.getParameter("day")
 		   		+ "-" + request.getParameter("month") 
 		   		+ "-" + request.getParameter("year");
@@ -49,26 +52,72 @@ public class RegisterReport extends HttpServlet {
 	   	try {
 			date = sdf.parse(date_string);
 		} catch (ParseException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
+			request.setAttribute("error", "Invalid report date.");
+			erd.forward(request, response);
 			return;
 		}
+	   	
+	   	int cabin_id;
+	   	try {
+	   		cabin_id = Integer.parseInt(request.getParameter("cabin_id"));
+	   	} catch(Exception e) {
+			request.setAttribute("error", "Invalid cabin id.");
+			erd.forward(request, response);
+			return;
+	   	}
+	   	
+	   	if(cabin_id < 0 || cabin_id > 23) {
+			request.setAttribute("error", "Invalid cabin id.");
+			erd.forward(request, response);
+			return;
+	   	}
+	   	
+	   	int wood;
+	   	try {
+	   		wood = Integer.parseInt(request.getParameter("wood"));
+	   	} catch(Exception e) {
+			request.setAttribute("error", "Invalid wood count.");
+			erd.forward(request, response);
+			return;
+	   	}
+	   	
+	   	if(wood < 0) {
+			request.setAttribute("error", "Negative wood count.");
+			erd.forward(request, response);
+			return;
+	   	}
+	   	
+	   	String email = request.getParameter("email");
+	   	if(email == null || email.isEmpty()) {
+			request.setAttribute("error", "Missing contact information (e-mail).");
+			erd.forward(request, response);
+			return;
+	   	}
+	   	
+	   	String damage = request.getParameter("damage");
+	   	if(damage == null) damage = "";
+	   	String missing = request.getParameter("missing");
+	   	if(missing == null) missing = "";
+	   	String other = request.getParameter("other");
+	   	if(other == null) other = "";
 		
 		Report report = new Report();
-		report.setCabin_id(Integer.parseInt(request.getParameter("cabin_id")));
+		report.setCabin_id(cabin_id);
 		report.setBooking_id(0);
-		report.setWood(Integer.parseInt(request.getParameter("wood")));
-		report.setDamage(request.getParameter("damage"));
-		report.setMissing(request.getParameter("missing"));
-		report.setOther(request.getParameter("other"));
-		report.setEmail(request.getParameter("email"));
+		report.setWood(wood);
+		report.setDamage(damage);
+		report.setMissing(missing);
+		report.setOther(other);
+		report.setEmail(email);
 		report.setReport_date(date);
 		Database db = new Database();
-		db.addReport(report);
+		int report_id = db.addReport(report);
 		db.close();
 		
-		// TODO: Report success back to user
-		response.sendRedirect("index.jsp");
+		RequestDispatcher rd = request.getRequestDispatcher("WEB-INF/report_confirmation.jsp");
+		request.setAttribute("report_id", report_id);
+		rd.forward(request, response);
+		
 	}
 
 }
