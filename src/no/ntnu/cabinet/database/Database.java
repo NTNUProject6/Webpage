@@ -67,6 +67,17 @@ public class Database {
 		}
 	}
 	
+	public void deleteBooking(int id) {
+		try{
+		statement = connection.createStatement();
+		String query = "DELETE FROM bookings WHERE booking_id=" + id;
+		statement.execute(query);
+		statement.close();
+		} catch(Exception e) {
+			return;
+		}
+	}
+	
 	public Booking getBookingById(int booking_id){
 		Booking b = new Booking();
 		

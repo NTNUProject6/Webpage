@@ -39,7 +39,10 @@ function initialize() {
         var marker = new google.maps.Marker({ animation: google.maps.Animation.DRO,
                                             position: myLatLng,
                                             map: map,
-                                            content: '<p><%= cabin.getName() %></p><p>wood: <%= cabin.getWood() %> </p><p><a href="<%= "logg.jsp?filter="+i %>">Reports</a></p>',
+                                            content:'<p><%= cabin.getName() %></p>' +
+                                            		'<p>wood: <%= cabin.getWood() %> </p>' + 
+                                            		'<p><a href=<%= "\"logg.jsp?filter="+i+"\"" %>>Reports</a></p>' +
+                                            		'<p><a href=<%= "\"booking_log.jsp?filter="+i+"\"" %>>Bookings</a></p>',
                                             title: '<%= cabin.getName() %>'
                                             });
         

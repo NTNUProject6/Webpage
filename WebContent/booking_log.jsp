@@ -29,10 +29,11 @@
                     <th>From</th>
                     <th>Email</th>
                     <th>Cabin</th>
+                    <th></th>
                 </tr>
             </thead>
-			
             <tbody>
+            	
 				<%
 				boolean even = true;
 				SimpleDateFormat fmt = new SimpleDateFormat("dd-MM-yyyy");
@@ -54,6 +55,8 @@
 						<td><%= fmt.format(b.getDate_To()) %></td>
 						<td><%= b.getUser_id() %></td>
 						<td><%= cabin.getName() %></td>
+						<td><a id="mybutton" href="CancelBooking?id=<%= b.getId() %>&filter=<%= filter %>" title="Cancel">
+							<button>Cancel</button></a></td>
 	                </tr>
 				
 				<%
@@ -70,6 +73,8 @@
 						<td><%= fmt.format(b.getDate_To()) %></td>
 						<td><%= b.getUser_id() %></td>
 						<td><%= cabin.getName() %></td>
+						<td><a id="mybutton" href="CancelBooking?id=<%= b.getId() %>" title="Cancel">
+							<button>Cancel</button></a></td>
 	                </tr>
 	                <%
 	                		even = !even;
@@ -78,7 +83,7 @@
 				}
 				db.close();
 				%>
-				
+				</tbody>
 				<tfoot>
 				<tr>
 						<td></td>
@@ -88,9 +93,7 @@
 						<td></td> 
 				</tr>
 				</tfoot>
-            </tbody>
         </table>
-
      </div> 
     </body>
 </html>
