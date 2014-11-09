@@ -2,6 +2,14 @@
     pageEncoding="UTF-8"
     import="java.util.ArrayList,java.text.SimpleDateFormat, 
     no.ntnu.cabinet.CabinetUtils,no.ntnu.cabinet.database.*"%>
+    
+    <%! String make_text_field(String text) {
+    	if(text == null) return "";
+    	if (text.length() > 15) {
+    		return "<a href=\"#\" onClick=\"alert('" + text + "'); return false;\">" + text.substring(0, 12) + "...</a>";
+    	} else
+    		return text;
+    }%>
 
 <%	if(!CabinetUtils.IsAdmin(session))
 		request.getRequestDispatcher("WEB-INF/notadmin.jsp").forward(request, response);
@@ -57,9 +65,9 @@
 	                    <td><%= cabin.getName() %></td>       
 	                    <td><%= r.getEmail() %></td> 
 						<td><%= r.getWood() >= 0 ? r.getWood() : "N/A" %></td> 
-						<td><%= r.getDamage() %></td>
-						<td><%= r.getMissing() %></td>
-						<td><%= r.getOther() %></td> 
+						<td><%= make_text_field(r.getDamage()) %></td>
+						<td><%= make_text_field(r.getMissing()) %></td>
+						<td><%= make_text_field(r.getOther()) %></td> 
 	                </tr>
 				
 				<%
@@ -76,9 +84,9 @@
 	                    <td><%= cabin.getName() %></td>       
 	                    <td><%= r.getEmail() %></td> 
 						<td><%= r.getWood() >= 0 ? r.getWood() : "N/A" %></td> 
-						<td><%= r.getDamage() %></td>
-						<td><%= r.getMissing() %></td>
-						<td><%= r.getOther() %></td> 
+						<td><%= make_text_field(r.getDamage()) %></td>
+						<td><%= make_text_field(r.getMissing()) %></td>
+						<td><%= make_text_field(r.getOther()) %></td> 
 	                </tr>
 	                <%
 	                		even = !even;
@@ -95,6 +103,8 @@
 	                    <td></td> 
 						<td></td> 
 						<td></td> 
+						<td></td>
+						<td></td>
 				</tr>
 				</tfoot>
             </tbody>
