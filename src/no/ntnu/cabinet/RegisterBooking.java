@@ -10,7 +10,6 @@ import javax.servlet.http.HttpServletResponse;
 import javax.servlet.RequestDispatcher;
 
 import java.text.SimpleDateFormat;
-import java.util.Calendar;
 import java.util.Date;
 
 import no.ntnu.cabinet.CabinetUtils;
@@ -58,23 +57,9 @@ public class RegisterBooking extends HttpServlet {
 			return;
 		}
 	 	
-	 	Calendar cal = Calendar.getInstance();
-	   	if(cal.getTime().after(from_date)) {
-	   		request.setAttribute("error", "Can't book in the past.");
-			erd.forward(request, response);
-			return;
-	   	}
-	 	cal.add(Calendar.MONTH, 6);
-	 	if(cal.getTime().before(to_date)) {
-	 		request.setAttribute("error", "Attempted to book too far (6 months) in the future.");
-			erd.forward(request, response);
-			return;
-	 	}
-	 	
-	 	cal.setTime(from_date);
-	 	cal.add(Calendar.DAY_OF_MONTH, 6);
-	 	if(cal.getTime().before(to_date)) {
-	 		request.setAttribute("error", "Can only book up to 7 days at a time.");
+	 	String date_error = CabinetUtils.ValidateBookingDates(from_date, to_date);
+	 	if(date_error != null) {
+	 		request.setAttribute("error", date_error);
 	 		erd.forward(request, response);
 	 	}
 	 	

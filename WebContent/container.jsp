@@ -35,25 +35,10 @@
 		erd.forward(request, response);
 		return;
  	}
-
- 	
-   	if(from_date.after(to_date)) {
-   		request.setAttribute("error", "Start date is after end date.");
-		erd.forward(request, response);
-   	}
-   	
-   	Calendar cal = Calendar.getInstance();
-   	cal.add(Calendar.MONTH, 6);
- 	if(cal.getTime().before(to_date)) {
- 		request.setAttribute("error", "Attempted to book too far (6 months) in the future.");
-		erd.forward(request, response);
-		return;
- 	}
- 	
- 	cal.setTime(from_date);
- 	cal.add(Calendar.DAY_OF_MONTH, 6);
- 	if(cal.getTime().before(to_date)) {
- 		request.setAttribute("error", "Can only book up to 7 days at a time.");
+	
+ 	String date_error = CabinetUtils.ValidateBookingDates(from_date, to_date);
+ 	if(date_error != null) {
+ 		request.setAttribute("error", date_error);
  		erd.forward(request, response);
  	}
    	
