@@ -200,7 +200,6 @@ public class Database {
 		return r;
 	}
 	
-	
 	public Cabin getCabin(int cabin_id){
 		Cabin cabin = new Cabin();
 		try{
@@ -213,6 +212,9 @@ public class Database {
 				cabin.setWood_updated(rs.getDate("wood_updated"));
 				cabin.setLat(rs.getDouble("lat"));
 				cabin.setLng(rs.getDouble("lng"));
+				cabin.setLocation(rs.getString("location"));
+				cabin.setCapacity(rs.getInt("beds"));
+				cabin.setDifficulty(rs.getInt("difficulty"));
 			}
 			rs.close();
 			statement.close();

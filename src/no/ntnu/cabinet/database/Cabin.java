@@ -7,10 +7,8 @@ public class Cabin {
 	private int id;
 	private String name;
 	private String location;
-	private String capacity;
-	private String difficulty;
-	private int height;
-	private int travel_time;
+	private int capacity;
+	private int difficulty;
 	private int wood;
 	private Date wood_updated;
 	private double lat;
@@ -36,29 +34,17 @@ public class Cabin {
 	public void setLocation(String location) {
 		this.location = location;
 	}
-	public String getCapacity() {
+	public int getCapacity() {
 		return capacity;
 	}
-	public void setCapacity(String capacity) {
+	public void setCapacity(int capacity) {
 		this.capacity = capacity;
 	}
-	public String getDifficulty() {
+	public int getDifficulty() {
 		return difficulty;
 	}
-	public void setDifficulty(String difficulty) {
+	public void setDifficulty(int difficulty) {
 		this.difficulty = difficulty;
-	}
-	public int getHeight() {
-		return height;
-	}
-	public void setHeight(int height) {
-		this.height = height;
-	}
-	public int getTravel_time() {
-		return travel_time;
-	}
-	public void setTravel_time(int travel_time) {
-		this.travel_time = travel_time;
 	}
 	public int getWood() {
 		return wood;
