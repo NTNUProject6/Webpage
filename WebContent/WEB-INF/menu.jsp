@@ -8,8 +8,8 @@
 	<ul >	
 		<li><a id="mybutton" href="index.jsp" title="Home">
 		  <button>Home</button></a></li>
-		<li><a id="mybutton" href="Registration.jsp" title="Registration">
-		  <button>Register</button></a></li>
+		<li><a id="mybutton" href="Registration.jsp" title="Book">
+		  <button>Book</button></a></li>
 		<li><a id="mybutton" href="report.jsp" title="Report">
 		  <button>Report</button></a></li>
 		<% if(!CabinetUtils.IsAdmin(session)) { %>
