@@ -29,17 +29,13 @@ public class AdminLogin extends HttpServlet {
 	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		PrintWriter out = response.getWriter();
-		
 		String adminPassword = "CabiNet";
 		String password = request.getParameter("formPassword");
 		if(!password.equals(adminPassword)) {
-			out.println("<b>Incorrect password.</b>");
-			out.println("<a href=\"Login.html\"> Go back <\\a>");
+			response.sendRedirect("Login.jsp?p=w");
 			return;
 		}
 		else {
-			out.println("Correct password.");
 			HttpSession session = request.getSession();
 			session.setAttribute("isAdmin", true);
 			response.sendRedirect("index.jsp");

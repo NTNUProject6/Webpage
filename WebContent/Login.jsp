@@ -20,6 +20,9 @@
 <label>Password</label> <input type="password" name="formPassword" /> <br>
 <input type="submit" value="Submit" name="submit" class="submitButton" /> 
 </form>
+<% if(request.getParameter("p") != null) { %>
+	<p style="color: red">Invalid password. Please try again.</p>
+<% } %>
 </div>
 <%@ include file="WEB-INF/footer.jsp" %>
 </body>
