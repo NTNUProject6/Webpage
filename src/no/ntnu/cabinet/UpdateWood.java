@@ -47,14 +47,17 @@ public class UpdateWood extends HttpServlet {
 			return;
 	 	}
 	 	
-	 	Report r = new Report();
-	 	Database db = new Database();
+	 	if(wood >= 0) {
 	 	
-	 	r.setWood(wood);
-	 	r.setCabin_id(cabin_id);
-	 	r.setReport_date(new Date());
-	 	
-	 	db.updateWood(r);
+		 	Report r = new Report();
+		 	Database db = new Database();
+		 	
+		 	r.setWood(wood);
+		 	r.setCabin_id(cabin_id);
+		 	r.setReport_date(new Date());
+		 	
+		 	db.updateWood(r);
+	 	}
 	 	response.sendRedirect("wood_status.jsp");
 	}
 
