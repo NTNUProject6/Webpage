@@ -3,8 +3,10 @@
     import="java.util.ArrayList,java.text.SimpleDateFormat, 
     no.ntnu.cabinet.CabinetUtils,no.ntnu.cabinet.database.*"%>
 
-<%	if(!CabinetUtils.IsAdmin(session))
+<%	if(!CabinetUtils.IsAdmin(session)) {
 		request.getRequestDispatcher("WEB-INF/notadmin.jsp").forward(request, response);
+		return;
+	}
 %>
 <!DOCTYPE html>
 <html>

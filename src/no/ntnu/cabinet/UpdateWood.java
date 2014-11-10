@@ -59,6 +59,7 @@ public class UpdateWood extends HttpServlet {
 		 	db.updateWood(r);
 	 	}
 	 	response.sendRedirect("wood_status.jsp");
+	 	return;
 	}
 
 }

@@ -32,6 +32,7 @@ public class AdminLogout extends HttpServlet {
 		if(session.getAttribute("isAdmin") != null)
 			session.setAttribute("isAdmin", false);
 		response.sendRedirect("index.jsp");
+		return;
 	}
 
 }

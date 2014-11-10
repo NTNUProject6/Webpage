@@ -2,8 +2,10 @@
     pageEncoding="UTF-8" import="no.ntnu.cabinet.database.*,
     no.ntnu.cabinet.CabinetUtils"%>
 
-<%	if(!CabinetUtils.IsAdmin(session))
+<%	if(!CabinetUtils.IsAdmin(session)) {
 		request.getRequestDispatcher("WEB-INF/notadmin.jsp").forward(request, response);
+		return;
+	}
 %>
 
 <!DOCTYPE html>

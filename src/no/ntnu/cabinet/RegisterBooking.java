@@ -61,6 +61,7 @@ public class RegisterBooking extends HttpServlet {
 	 	if(date_error != null) {
 	 		request.setAttribute("error", date_error);
 	 		erd.forward(request, response);
+	 		return;
 	 	}
 	 	
 	 	int cabin_id;
@@ -110,6 +111,7 @@ public class RegisterBooking extends HttpServlet {
 		RequestDispatcher rd = request.getRequestDispatcher("WEB-INF/register_confirmation.jsp");
 		request.setAttribute("booking_id", booking_id);
 		rd.forward(request, response);
+		return;
 	}
 
 }

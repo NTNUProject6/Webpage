@@ -146,7 +146,7 @@ public class RegisterReport extends HttpServlet {
 		RequestDispatcher rd = request.getRequestDispatcher("WEB-INF/report_confirmation.jsp");
 		request.setAttribute("report_id", report_id);
 		rd.forward(request, response);
-		
+		return;		
 	}
 
 }

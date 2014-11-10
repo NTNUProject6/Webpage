@@ -1,7 +1,6 @@
 package no.ntnu.cabinet;
 
 import java.io.IOException;
-import java.io.PrintWriter;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -39,6 +38,7 @@ public class AdminLogin extends HttpServlet {
 			HttpSession session = request.getSession();
 			session.setAttribute("isAdmin", true);
 			response.sendRedirect("index.jsp");
+			return;
 		}
 	}
 

@@ -40,6 +40,7 @@
  	if(date_error != null) {
  		request.setAttribute("error", date_error);
  		erd.forward(request, response);
+ 		return;
  	}
    	
    	boolean[] cabin_is_free = new boolean[23]; 	
