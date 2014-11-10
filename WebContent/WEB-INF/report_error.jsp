@@ -7,7 +7,7 @@
 <meta charset="UTF-8">
  <head>
  <link rel="stylesheet" type="text/css" href="main.css">
- <title>Confirmation page</title>
+ <title>Report error</title>
  </head>
  <body>
  <%@ include file="menu.jsp" %>
