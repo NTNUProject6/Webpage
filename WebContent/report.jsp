@@ -1,5 +1,5 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8" import="no.ntnu.cabinet.CabinetUtils"%>
+    pageEncoding="UTF-8" import="no.ntnu.cabinet.CabinetUtils,java.util.Calendar"%>
 <!DOCTYPE html>
 <html>
 <!--For including Norwegian text in the webpage-->
@@ -11,6 +11,33 @@
 	Reporting
 </title>
 </head>
+
+<%!
+	String Months[] = {
+		"January",
+		"February",
+		"March",
+		"April",
+		"May",
+		"June",
+		"July",
+		"August",
+		"September",
+		"October",
+		"November",
+		"December"
+	}; 
+%>
+
+<%
+Calendar now = Calendar.getInstance();
+Calendar end = Calendar.getInstance();
+end.add(Calendar.MONTH, -2);
+int day = now.get(Calendar.DAY_OF_MONTH);
+int month = now.get(Calendar.MONTH) + 1;
+int year = now.get(Calendar.YEAR);
+%>
+
 <body>
 <%@ include file="WEB-INF/menu.jsp" %>
 
@@ -18,7 +45,7 @@
 <form id="contact_form" action="RegisterReport" method="post">
 	<div class="row">
 		<label for="cabin">Cabin Name:</label>
-         <select name="cabin_id">
+         <select name="cabin_id">             
                 <option value="1">Flåkoia</option>
                 <option value="2">Fosenkoia</option>
                 <option value="3" selected>Heinfjordstua</option>
@@ -50,56 +77,20 @@
 		<label for="date">Date:</label>
 	
 <select name="day">
-	<option value="01">1
-	<option value="02">2
-	<option value="03">3
-	<option value="04">4
-	<option value="05">5
-	<option value="06">6
-	<option value="07">7
-	<option value="08">8
-	<option value="09">9
-	<option value="10">10
-	<option value="11">11
-	<option value="12">12
-	<option value="13">13
-	<option value="14">14
-	<option value="15">15
-	<option value="16">16
-	<option value="17">17
-	<option value="18">18
-	<option value="19">19
-	<option value="20">20
-	<option value="21">21
-	<option value="22">22
-	<option value="23">23
-	<option value="24">24
-	<option value="25">25
-	<option value="26">26
-	<option value="27">27
-	<option value="28">28
-	<option value="29">29
-	<option value="30">30
-	<option value="31">31
+	<%	for(int i = 1; i <= 31; i++) {%>
+	<option value="<%= i %>"<%= day == i ? " selected" : "" %>><%= i %>
+	<% } %>
 </select>
 <select name="month">
-	 <option value="01">January
-	 <option value="02">February
-	 <option value="03">March
-	 <option value="04">April
-	 <option value="05">May
-	<option value="06">June
-	<option value="07">July
-	<option value="08">August
-	<option value="09">September
-	<option value="10">October
-	<option value="11">November
-	<option value="12">December
+	<% for(int i = 2; i >= 0; i--) { %>
+	<option value="<%= (month + 11 - i) % 12 + 1 %>"<%= i == 0 ? " selected" : "" %>><%= Months[(month + 11 - i) % 12] %>
+	<% } %>
 </select>
 <select name="year">
-	<option value="2014">2014
-	<option value="2015">2015
-	<option value="2016">2016
+	<% if(end.get(Calendar.YEAR) < now.get(Calendar.YEAR)) { %>
+	<option value="<%= year-1 %>"><%= year-1 %>
+	<% } %>
+	<option value="<%= year %>" selected><%= year %>
 </select>
 		</div>
 	<div class="row">
