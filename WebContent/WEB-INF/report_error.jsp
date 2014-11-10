@@ -17,5 +17,6 @@
        <p> <%= request.getAttribute("error") %> </p>
 		</div> 
 	</div>
+	<%@ include file="footer.jsp" %>
 </body>
 </html>

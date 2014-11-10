@@ -75,6 +75,7 @@
 				</tr>
 				</tfoot>
         </table>
-     </div> 
+     </div>
+     <%@ include file="WEB-INF/footer.jsp" %> 
     </body>
 </html>

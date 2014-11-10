@@ -75,5 +75,6 @@ int year = Calendar.getInstance().get(Calendar.YEAR);
 <input id="submit_button" type="submit" value="submit" />
 </form>
 </div>
+<%@ include file="WEB-INF/footer.jsp" %>
 </body>
 </html>

@@ -141,7 +141,6 @@ int year = now.get(Calendar.YEAR);
 </form>			
 
 </div>
+<%@ include file="WEB-INF/footer.jsp" %>
 </body>
 </html>
-
-

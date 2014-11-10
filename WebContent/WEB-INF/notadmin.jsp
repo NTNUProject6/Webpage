@@ -18,10 +18,6 @@
 		<p>This functionality requires administrator privileges. Please log in and try again.</p>
   </div>
 </div>  
-
-<div id="footer">
-Copyright © index.html
-</div>
-
+<%@ include file="footer.jsp" %>
 </body>
 </html>

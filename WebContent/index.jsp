@@ -24,10 +24,6 @@
 
   </div>
 </div>  
-
-<div id="footer">
-Copyright © index.html
-</div>
-
+<%@ include file="WEB-INF/footer.jsp" %>
 </body>
 </html>

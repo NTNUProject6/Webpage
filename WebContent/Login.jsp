@@ -21,5 +21,6 @@
 <input type="submit" value="Submit" name="submit" class="submitButton" /> 
 </form>
 </div>
+<%@ include file="WEB-INF/footer.jsp" %>
 </body>
 </html>
