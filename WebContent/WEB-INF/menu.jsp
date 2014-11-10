@@ -3,7 +3,7 @@
 
 <div class="menu">
 	<a href="index.jsp" >
-    <img src="Images/koiene.png " alt="logo" class="thumbnails" />
+    <img src="Images/koiene.png" alt="logo" class="thumbnails" />
     </a>
 	<ul >	
 		<li><a id="mybutton" href="index.jsp" title="Home">
