@@ -49,7 +49,7 @@ int year = Calendar.getInstance().get(Calendar.YEAR);
 </select>
 <select name="from_month">
 	<% for(int i = 0; i < 12; i++) { %>
-	<option value="<%= (month + i) % 12 %>"><%= Months[(month + i) % 12] %>
+	<option value="<%= (month + i) % 12 + 1 %>"><%= Months[(month + i) % 12] %>
 	<% } %>
 </select>
 <select name="from_year">
@@ -65,7 +65,7 @@ int year = Calendar.getInstance().get(Calendar.YEAR);
 </select>
 <select name="to_month">
 	<% for(int i = 0; i < 12; i++) { %>
-	<option value="<%= (month + i) % 12 %>"><%= Months[(month + i) % 12] %>
+	<option value="<%= (month + i) % 12 + 1 %>"><%= Months[(month + i) % 12] %>
 	<% } %>
 </select>
 <select name="to_year">
