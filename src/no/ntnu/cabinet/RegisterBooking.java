@@ -71,6 +71,13 @@ public class RegisterBooking extends HttpServlet {
 			return;
 	 	}
 	 	
+	 	cal.setTime(from_date);
+	 	cal.add(Calendar.DAY_OF_MONTH, 6);
+	 	if(cal.getTime().before(to_date)) {
+	 		request.setAttribute("error", "Can only book up to 7 days at a time.");
+	 		erd.forward(request, response);
+	 	}
+	 	
 	 	int cabin_id;
 	 	try {
 	 		cabin_id = Integer.parseInt(request.getParameter("cabins"));
