@@ -74,7 +74,7 @@ int year = now.get(Calendar.YEAR);
 
 			</div>
 	<div class="row">
-		<label for="date">Date:</label>
+		<label for="date">Last date of visit:</label>
 	
 <select name="day">
 	<%	for(int i = 1; i <= 31; i++) {%>
