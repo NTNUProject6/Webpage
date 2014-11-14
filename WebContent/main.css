@@ -14,13 +14,18 @@ body{
    z-index:15;
    top:10%;
    left:15em;
+}
+.koieElement{
+   position:absolute;
+   display:block;
+   vertical-align: left;	
+   z-index:15;
+   top:10%;
+   left:15em;
    overflow:auto;
    height: 80%;
    width:65%;
-	
- 
-	
-	}
+}
 .mailsubmit{
 	padding: 3px;
 }

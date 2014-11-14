@@ -52,7 +52,7 @@
  <body>
 <%@ include file="WEB-INF/menu.jsp" %>
 
-<div class="mainElement">
+<div class="koieElement">
  <form action="RegisterBooking" method="post">
  <input type="hidden" name="from_date" value="<%= from_date_string %>">
  <input type="hidden" name="to_date" value="<%= to_date_string %>">
