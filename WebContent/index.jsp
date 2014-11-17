@@ -8,10 +8,6 @@
 <title> 
 	Home
 </title>
-
-<!--<img src="koiene.png"  width="140" height="145">-->
-
-
 </head>
 
 <body>
@@ -20,7 +16,12 @@
  <div class="mainElement">
   <div class="center_div">
 		<img src="Images/Home.jpg" class="header_image" alt="welcome" />
-      <p>NTNUI (NTNU sportsclubb) provides an exclusive feature for NTNU students and staffs, a net of 24 small cabins. The cabins are widely distributed from the coast to high up in the mountains in Trøndelag district. These are run on voluntary basis by a group of students, named NTNUI Koiene.</p>
+		  <p>Welcome to CabiNet.</p>
+		  <p>This is the booking and administration web page for the NTNUI Koiene.</p>
+
+		  <p>For more information about the cabins, history and pricing of the cabin service, please visit the NTNUI koiene official web page at <a href="http://org.ntnu.no/koiene/">http://org.ntnu.no/koiene/</a>.</p>
+
+		  <p>Have a nice stay!</p>
 
   </div>
 </div>  
