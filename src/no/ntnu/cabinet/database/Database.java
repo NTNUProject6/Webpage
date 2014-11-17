@@ -8,10 +8,9 @@ import java.sql.Statement;
 import java.util.ArrayList;
 
 public class Database {
-	
-	private static java.sql.Connection connection;
-	private static java.sql.Statement statement;
-	
+	private java.sql.Connection connection;
+	private java.sql.Statement statement;
+
 	private static String url = "jdbc:mysql://cabinet-ntnu.no-ip.org/cabinet",
 					username = "cabinet", password = "CabiNet";
 
