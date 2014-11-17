@@ -19,7 +19,7 @@
 <!DOCTYPE html>
 <html>
     <head>
-		<title>Rapport logg</title>
+		<title>Report log</title>
         <meta charset="UTF-8">
 		<link rel="stylesheet" href="main.css" type="text/css" />
 		

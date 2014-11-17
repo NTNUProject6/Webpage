@@ -11,7 +11,7 @@
 <!DOCTYPE html>
 <html>
     <head>
-		<title>Booking log</title>
+		<title>Wood status</title>
         <meta charset="UTF-8">
 		<link rel="stylesheet" href="main.css" type="text/css" />
 		
