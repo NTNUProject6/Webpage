@@ -27,6 +27,13 @@ public class Database {
 			e.printStackTrace();
 		}
 	}
+
+	/**
+	 * Close the JDBC connection
+	 *
+	 * This should be done whenever we are done with a Database instance
+	 * to minimise the amount of open connections to our database.
+	 */
 	public void close() {
 		if(connection != null) {
 			try {
@@ -253,6 +260,16 @@ public class Database {
 		return cabin;
 	}
 	
+	/**
+	 * Update the wood status of a cabin from a report
+	 *
+	 * The cabin's wood status and wood updated date is set to the reported
+	 * values if and only if the report's date is the same as or after the
+	 * cabin's last wood updated date.
+	 *
+	 * @param r	the report instance with new data
+	 * @return	true if the wood status was updated, else false
+	 */
 	public boolean updateWood(Report r) {
 		Cabin c = getCabin(r.getCabin_id());
 

@@ -10,6 +10,18 @@ import no.ntnu.cabinet.database.Database;
 import no.ntnu.cabinet.database.Booking;
 
 public class CabinetUtils {
+
+	/**
+	 * Checks if a booking collides with existing bookings
+	 *
+	 * Looks for intersections between the given period and existing
+	 * booking periods for the given cabin.
+	 *
+	 * @param cabin_id	ID of the cabin to check
+	 * @param from_date	start date
+	 * @param to_date	end date
+	 * @return	true if an intersection is found, else false
+	 */
 	public static boolean BookingCollides(int cabin_id, Date from_date, Date to_date) {
 		Database db = new Database();
 		ArrayList<Booking> bookings = db.getBooking(cabin_id);
@@ -22,12 +34,31 @@ public class CabinetUtils {
 		}
 		return false;
 	}
-	
+
+	/**
+	 * Check if the client's session has admin privileges.
+	 *
+	 * @param session	HttpSession object to check
+	 * @return	true if client is admin, else false
+	 */
 	public static boolean IsAdmin(HttpSession session) {
 		return (session.getAttribute("isAdmin") != null &&
 				(Boolean)session.getAttribute("isAdmin") == true);
 	}
-	
+
+	/**
+	 * Check if the given booking dates are valid
+	 *
+	 * A valid booking period should satisfy:
+	 *  End should not be before start.
+	 *  Start should not be earlier than current date.
+	 *  End should not be too far in the future (6 months).
+	 *  Days between start and end should not exceed .
+	 *
+	 * @param from	start date
+	 * @param to	end date
+	 * @return	null if the period is valid, else a string explaining why
+	 */
 	public static String ValidateBookingDates(Date from, Date to) {
 	 	Calendar cal = Calendar.getInstance();
 	 	cal.set(Calendar.HOUR_OF_DAY, 0);
