@@ -8,8 +8,7 @@ public class Booking {
 	private String user_id;
 	private Date date_From;
 	private Date date_To;
-	
-	//setter & getter
+
 	public int getId() {
 		return id;
 	}
@@ -40,5 +39,4 @@ public class Booking {
 	public void setDate_To(Date date_To) {
 		this.date_To = date_To;
 	}
-	
 }

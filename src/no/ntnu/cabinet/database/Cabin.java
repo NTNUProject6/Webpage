@@ -3,7 +3,6 @@ package no.ntnu.cabinet.database;
 import java.util.Date;
 
 public class Cabin {
-	
 	private int id;
 	private String name;
 	private String location;
@@ -13,9 +12,7 @@ public class Cabin {
 	private Date wood_updated;
 	private double lat;
 	private double lng;
-	
-	
-	//setter & getter
+
 	public int getId() {
 		return id;
 	}
