@@ -66,7 +66,7 @@
 			 <div class="container collapsed">
 			  <div class="header">
 			  <input type ="radio" name ="cabins" value ="<%= i %>"> 
-			  <img src="Images/<%= i %>_1.jpg" /><%= c.getName() %> </div><br /> 
+			  <img src="Images/<%= i %>_1.jpg" /><%= c.getName() %> (<%= c.getCapacity() %> beds)</div><br /> 
 				<div class="content">
 					<div><a href="Images/<%= i %>_2.jpg"><img src="Images/<%= i %>_3.jpg"></a></div>
 					<div><ul id="info">
